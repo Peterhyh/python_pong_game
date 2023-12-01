@@ -33,17 +33,15 @@ while game_on:
 
     if ball.distance(right_paddle) < 40 and ball.xcor() == 290:
         ball.bounce_x()
-        # right_scoreboard.score_up()
+        scoreboard.left_point()
 
     if ball.distance(left_paddle) < 40 and ball.xcor() == -290:
         ball.bounce_x()
-        # left_scoreboard.score_up()
+        scoreboard.left_point()
 
     if ball.xcor() > 310 or ball.xcor() < -310:
         game_on = False
-        # left_scoreboard.game_over()
-
-    # reset ball when out of bound and moves towards the scoring side
+        scoreboard.game_over()
 
 
 screen.exitonclick()
