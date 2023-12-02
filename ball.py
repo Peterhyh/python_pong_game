@@ -4,6 +4,8 @@ from turtle import Turtle
 class Ball(Turtle):
     def __init__(self):
         super().__init__()
+        self.ball_speed = 1
+        self.speed(self.ball_speed)
         self.shape("circle")
         self.color("white")
         self.shapesize(stretch_wid=1, stretch_len=1)
@@ -21,3 +23,14 @@ class Ball(Turtle):
 
     def bounce_x(self):
         self.x_move *= -1
+        self.ball_speed *= 0.9
+
+    def increase_speed(self):
+        self.ball_speed += 1
+        print(self.ball_speed)
+
+    def reset_ball(self):
+        self.goto(0, 0)
+        self.ball_speed = 0.1
+        self.bounce_x()
+        self.bounce_y()
