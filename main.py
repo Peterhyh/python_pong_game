@@ -8,6 +8,7 @@ screen = Screen()
 screen.bgcolor("black")
 screen.setup(width=700, height=700)
 screen.title("Pong Game")
+screen.tracer(0)
 
 left_paddle = Paddle((-300, 0))
 right_paddle = Paddle((300, 280))
